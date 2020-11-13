@@ -51,7 +51,10 @@ namespace segundoparcial.Controllers
             var pago = new Pago
             {
                     TerceroID = pagoInput.TerceroID,
-                    
+                    TipoPago = pagoInput.TipoPago,
+                    FechaPago = pagoInput.FechaPago,
+                    ValorPago = pagoInput.ValorPago,
+                    IVA = pagoInput.IVA,
             };
             return pago;
         }
