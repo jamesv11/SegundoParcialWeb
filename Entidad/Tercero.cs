@@ -1,4 +1,6 @@
-﻿using System;
+﻿using System.ComponentModel.DataAnnotations;
+using System;
+using System.Collections.Generic;
 
 namespace Entidad
 {
@@ -13,6 +15,6 @@ namespace Entidad
         public string Departamento { get; set; }
         public string Ciudad { get; set; }
 
-        public List<pago> ListaPagos { get; set; }
+        public virtual List<Pago> ListaPagos { get; set; }
     }
 }
