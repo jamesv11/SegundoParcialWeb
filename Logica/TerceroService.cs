@@ -39,7 +39,7 @@ namespace Logica
         {
             try
             {
-                var terceros = _context.Terceros.Include(t => t.ListaPagos).ToList();
+                var terceros = _context.Terceros.ToList();
                 return new ConsultarTerceroResponse(terceros);
 
             }
