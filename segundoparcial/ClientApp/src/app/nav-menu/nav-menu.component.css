@@ -1,18 +1,8 @@
-a.navbar-brand {
-  white-space: normal;
-  text-align: center;
-  word-break: break-all;
+a{
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+  
 }
-
-html {
-  font-size: 14px;
-}
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
-}
-
-.box-shadow {
-  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+nav{
+  background-color: #FAD24B;
 }

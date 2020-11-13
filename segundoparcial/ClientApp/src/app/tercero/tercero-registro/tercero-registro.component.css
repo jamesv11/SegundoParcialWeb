@@ -1,0 +1,22 @@
+form{
+    margin-top: 65px;
+    margin-left: 27%;
+    width: 500px;
+}
+h2{
+    padding-bottom: 15px;
+    text-align: center;
+    border-bottom: 1px black solid  ;
+}
+.posicionboton{
+    margin-top: 40px;
+    margin-left: 42%;
+}
+.enlace{
+    
+    text-align: center;
+    
+}
+.separar{
+    margin-left: 200px;
+}
