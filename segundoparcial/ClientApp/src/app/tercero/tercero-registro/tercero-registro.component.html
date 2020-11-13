@@ -7,37 +7,64 @@
 
 <div class="modal-body">
     <div class="container">
-        <form>
+        <form [formGroup]="registrarTerceroForm" (ngSubmit)="OnSubmit()">
             <div class="form-group">
-                <input type="text" class="form-control" id="inputDocumento" placeholder="Numero de identificacion">
+                <input type="text" class="form-control" formControlName="inputDocumento" name="inputDocumento" placeholder="Numero de identificacion" [ngClass]="{ 'is-invalid': submitted && f.inputDocumento.errors}">
+                 <div *ngIf="submitted && f.inputDocumento.errors" class="invalid-feedback">
+                    <div *ngIf="f.inputDocumento.errors.required">El correo es requerida</div>
+                  </div>
             </div>
             <div class="form-row">
                 <div class="form-group ">
-                    <input type="text" class="form-control" id="inputNombre" placeholder="Nombre">
+                    <input type="text" class="form-control" formControlName="inputNombre" name="inputNombre" placeholder="Nombre"
+                    [ngClass]="{ 'is-invalid': submitted && f.inputNombre.errors}">
+                    <div *ngIf="submitted && f.inputNombre.errors" class="invalid-feedback">
+                        <div *ngIf="f.inputNombre.errors.required">El correo es requerida</div>
+                      </div>
                 </div>
                 <div class="form-group ">
-                    <input type="text" class="form-control" id="inputDireccion" placeholder="Direccion">
+                    <input type="text" class="form-control" formControlName="inputDireccion" name="inputDireccion" placeholder="Direccion"
+                    [ngClass]="{ 'is-invalid': submitted && f.inputDireccion.errors}">
+                    <div *ngIf="submitted && f.inputDireccion.errors" class="invalid-feedback">
+                        <div *ngIf="f.inputDireccion.errors.required">El correo es requerida</div>
+                      </div>
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group ">
-                    <input type="text" class="form-control" id="inputTelefono" placeholder="Telefono">
+                    <input type="text" class="form-control" formControlName="inputTelefono" name="inputTelefono" placeholder="Telefono"
+                    [ngClass]="{ 'is-invalid': submitted && f.inputTelefono.errors}">
+                    <div *ngIf="submitted && f.inputTelefono.errors" class="invalid-feedback">
+                        <div *ngIf="f.inputTelefono.errors.required">El correo es requerida</div>
+                      </div>
                 </div>
                 <div class="form-group ">
-                    <input type="text" class="form-control" id="inputPais" placeholder="Pais">
+                    <input type="text" class="form-control" formControlName="inputPais" name="inputPais"  placeholder="Pais"
+                    [ngClass]="{ 'is-invalid': submitted && f.inputPais.errors}">
+                    <div *ngIf="submitted && f.inputPais.errors" class="invalid-feedback">
+                        <div *ngIf="f.inputPais.errors.required">El correo es requerida</div>
+                      </div>
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group ">
-                    <input type="text" class="form-control" id="inputDepartamento" placeholder="Departamento">
+                    <input type="text" class="form-control" formControlName="inputDepartamento" name="inputDepartamento" placeholder="Departamento"
+                    [ngClass]="{ 'is-invalid': submitted && f.inputDepartamento.errors}">
+                    <div *ngIf="submitted && f.inputDepartamento.errors" class="invalid-feedback">
+                        <div *ngIf="f.inputDepartamento.errors.required">El correo es requerida</div>
+                      </div>
                 </div>
                 <div class="form-group ">
-                    <input type="text" class="form-control" id="inputCiudad" placeholder="Ciudad">
+                    <input type="text" class="form-control" formControlName="inputCiudad" name="inputCiudad" placeholder="Ciudad"
+                    [ngClass]="{ 'is-invalid': submitted && f.inputCiudad.errors}">
+                    <div *ngIf="submitted && f.inputCiudad.errors" class="invalid-feedback">
+                        <div *ngIf="f.inputCiudad.errors.required">El correo es requerida</div>
+                      </div>
                 </div>
             </div>
             <div>
                 <div aria-label="Basic example">
-                    <button type="button" class="btn btn-outline-secondary">Registrar</button>
+                    <button type="button" class="btn btn-outline-secondary" [disabled]="registrarTerceroForm.invalid">Registrar</button>
                     <button type="button" class="btn btn-outline-secondary separar">Cancelar</button>
                 </div>
             </div>

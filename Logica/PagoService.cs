@@ -19,7 +19,7 @@ namespace Logica
         {
             try
             {
-                var pagoBuscado = _context.Pagos.Find(pago.TerceroID);
+                var pagoBuscado = _context.Pagos.Find(pago.PagoID);
                 if(pagoBuscado != null)
                 {
                     return new GuardarPagoResponse("Error la persona se encuentra registrada");
