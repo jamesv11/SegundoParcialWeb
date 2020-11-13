@@ -1,0 +1,9 @@
+C:\Users\JamesV\OneDrive\Escritorio\5 semestre\ProgramacionWeb\Parcial2web\Entidad\bin\Debug\netstandard2.0\Entidad.deps.json
+C:\Users\JamesV\OneDrive\Escritorio\5 semestre\ProgramacionWeb\Parcial2web\Entidad\bin\Debug\netstandard2.0\Entidad.dll
+C:\Users\JamesV\OneDrive\Escritorio\5 semestre\ProgramacionWeb\Parcial2web\Entidad\bin\Debug\netstandard2.0\Entidad.pdb
+C:\Users\JamesV\OneDrive\Escritorio\5 semestre\ProgramacionWeb\Parcial2web\Entidad\obj\Debug\netstandard2.0\Entidad.csprojAssemblyReference.cache
+C:\Users\JamesV\OneDrive\Escritorio\5 semestre\ProgramacionWeb\Parcial2web\Entidad\obj\Debug\netstandard2.0\Entidad.AssemblyInfoInputs.cache
+C:\Users\JamesV\OneDrive\Escritorio\5 semestre\ProgramacionWeb\Parcial2web\Entidad\obj\Debug\netstandard2.0\Entidad.AssemblyInfo.cs
+C:\Users\JamesV\OneDrive\Escritorio\5 semestre\ProgramacionWeb\Parcial2web\Entidad\obj\Debug\netstandard2.0\Entidad.csproj.CoreCompileInputs.cache
+C:\Users\JamesV\OneDrive\Escritorio\5 semestre\ProgramacionWeb\Parcial2web\Entidad\obj\Debug\netstandard2.0\Entidad.dll
+C:\Users\JamesV\OneDrive\Escritorio\5 semestre\ProgramacionWeb\Parcial2web\Entidad\obj\Debug\netstandard2.0\Entidad.pdb

@@ -1,0 +1,14 @@
+C:\Users\JamesV\OneDrive\Escritorio\5 semestre\ProgramacionWeb\Parcial2web\Logica\bin\Debug\netstandard2.0\Logica.deps.json
+C:\Users\JamesV\OneDrive\Escritorio\5 semestre\ProgramacionWeb\Parcial2web\Logica\bin\Debug\netstandard2.0\Logica.dll
+C:\Users\JamesV\OneDrive\Escritorio\5 semestre\ProgramacionWeb\Parcial2web\Logica\bin\Debug\netstandard2.0\Logica.pdb
+C:\Users\JamesV\OneDrive\Escritorio\5 semestre\ProgramacionWeb\Parcial2web\Logica\bin\Debug\netstandard2.0\Datos.dll
+C:\Users\JamesV\OneDrive\Escritorio\5 semestre\ProgramacionWeb\Parcial2web\Logica\bin\Debug\netstandard2.0\Entidad.dll
+C:\Users\JamesV\OneDrive\Escritorio\5 semestre\ProgramacionWeb\Parcial2web\Logica\bin\Debug\netstandard2.0\Datos.pdb
+C:\Users\JamesV\OneDrive\Escritorio\5 semestre\ProgramacionWeb\Parcial2web\Logica\bin\Debug\netstandard2.0\Entidad.pdb
+C:\Users\JamesV\OneDrive\Escritorio\5 semestre\ProgramacionWeb\Parcial2web\Logica\obj\Debug\netstandard2.0\Logica.csprojAssemblyReference.cache
+C:\Users\JamesV\OneDrive\Escritorio\5 semestre\ProgramacionWeb\Parcial2web\Logica\obj\Debug\netstandard2.0\Logica.AssemblyInfoInputs.cache
+C:\Users\JamesV\OneDrive\Escritorio\5 semestre\ProgramacionWeb\Parcial2web\Logica\obj\Debug\netstandard2.0\Logica.AssemblyInfo.cs
+C:\Users\JamesV\OneDrive\Escritorio\5 semestre\ProgramacionWeb\Parcial2web\Logica\obj\Debug\netstandard2.0\Logica.csproj.CoreCompileInputs.cache
+C:\Users\JamesV\OneDrive\Escritorio\5 semestre\ProgramacionWeb\Parcial2web\Logica\obj\Debug\netstandard2.0\Logica.csproj.CopyComplete
+C:\Users\JamesV\OneDrive\Escritorio\5 semestre\ProgramacionWeb\Parcial2web\Logica\obj\Debug\netstandard2.0\Logica.dll
+C:\Users\JamesV\OneDrive\Escritorio\5 semestre\ProgramacionWeb\Parcial2web\Logica\obj\Debug\netstandard2.0\Logica.pdb
