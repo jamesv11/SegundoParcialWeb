@@ -1,74 +1,44 @@
-<div>
-    <div class="center">
-        <h2>Informacion de contacto</h2>
-    </div>
-    <div>
+<div class="modal-header center">
+    <h2 class="modal-title">Informacion de registro</h2>
+    <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+
+<div class="modal-body">
+    <div class="container">
         <form>
             <div class="form-group">
-                <input type="email" class="form-control" id="inputEmail" placeholder="Correo electronico">
+                <input type="text" class="form-control" id="inputDocumento" placeholder="Numero de identificacion">
             </div>
             <div class="form-row">
-                <div class="form-group col-md-6">
+                <div class="form-group ">
                     <input type="text" class="form-control" id="inputNombre" placeholder="Nombre">
                 </div>
-                <div class="form-group col-md-6">
-                    <input type="text" class="form-control" id="inputApellido" placeholder="Apellido">
+                <div class="form-group ">
+                    <input type="text" class="form-control" id="inputDireccion" placeholder="Direccion">
                 </div>
-            </div>
-            <div class="form-group">
-                <input type="email" class="form-control" id="inputEmail" placeholder="Cedula de ciudadania">
-            </div>
-            <div class="form-group">
-                <input type="text" class="form-control" id="inputDireccion" placeholder="Direccion">
-            </div>
-            <div class="form-group">
-                <input type="text" class="form-control" id="inputCiudad" placeholder="Ciudad">
             </div>
             <div class="form-row">
-                <div class="col-md-4 mb-3">
-                    <select class="custom-select" id="validationCustom04" required>
-                        <option selected disabled value="">Pais/Region</option>
-                        <option>...</option>
-                    </select>
-                    <div class="invalid-feedback">
-                        Please select a valid state.
-                    </div>
+                <div class="form-group ">
+                    <input type="text" class="form-control" id="inputTelefono" placeholder="Telefono">
                 </div>
-                <div class="col-md-4 mb-3">
-                    <select class="custom-select" id="validationCustom04" required>
-                        <option selected disabled value="">Provincia</option>
-                        <option>...</option>
-                    </select>
-                    <div class="invalid-feedback">
-                        Please select a valid state.
-                    </div>
-                </div>
-
-                <div class="col-md-4 mb-3">
-                    <select class="custom-select" id="validationCustom04" required>
-                        <option selected disabled value="">Codigo postal</option>
-                        <option>...</option>
-                    </select>
-                    <div class="invalid-feedback">
-                        Please select a valid state.
-                    </div>
+                <div class="form-group ">
+                    <input type="text" class="form-control" id="inputPais" placeholder="Pais">
                 </div>
             </div>
-            <div class="form-group">
-                <input type="email" class="form-control" id="inputTelefono" placeholder="Telefono">
-            </div>
-            <div class="form-group">
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="gridCheck">
-                    <label class="form-check-label" for="gridCheck">
-                        Acepto terminos y restricciones
-                    </label>
+            <div class="form-row">
+                <div class="form-group ">
+                    <input type="text" class="form-control" id="inputDepartamento" placeholder="Departamento">
+                </div>
+                <div class="form-group ">
+                    <input type="text" class="form-control" id="inputCiudad" placeholder="Ciudad">
                 </div>
             </div>
-            <div >
-                <div aria-label="Basic example" >
-                    <button  type="button" class="btn btn-outline-secondary">Volver al carrito</button>
-                    <button  type="button" class="btn btn-outline-secondary separar">Seguir con envios </button>
+            <div>
+                <div aria-label="Basic example">
+                    <button type="button" class="btn btn-outline-secondary">Registrar</button>
+                    <button type="button" class="btn btn-outline-secondary separar">Cancelar</button>
                 </div>
             </div>
         </form>

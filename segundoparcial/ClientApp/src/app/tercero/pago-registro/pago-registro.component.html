@@ -1,6 +1,6 @@
 <div>
     <div class="center">
-        <h2>Informacion de contacto</h2>
+        <h2>Realizar pago</h2>
     </div>
     <div>
         <form>
@@ -9,54 +9,35 @@
                     <input type="text" class="form-control " id="inputIdentidad" placeholder="Numero de identidad">
                 </div>
                 <div >
-                    <button class="btn btn-info btn-lg" type="button" >...</button>
+                    <button class="btn btn-info btn-lg" type="button" (click)="Verificar()" >Verificar</button>
                 </div>
             </div>
             <div class="form-group">
-                <input type="email" class="form-control" id="inputEmail" placeholder="Cedula de ciudadania">
+                <label for="exampleFormControlSelect1">Seleccione el tipo de pago</label>
+                <select class="form-control" id="exampleFormControlSelect1">
+                <option selected>Seleccione...</option>
+                  <option>Gastos Administrativos</option>
+                  <option>Gastos Financieros</option>
+                  <option>Gastos Legales</option>
+                  <option>Gastos de Viajes y transporte</option>
+                  <option>Honorarios</option>
+                  <option>Arrendamiento</option>
+                  <option>Impuestos y retenciones</option>         
+                </select>
+              </div>
+            <div class="form-group">
+                <label for="inputFecha">Fecha de pago</label>
+                <input type="date" class="form-control" name="inputFecha">
             </div>
             <div class="form-group">
-                <input type="text" class="form-control" id="inputDireccion" placeholder="Direccion">
+                <input type="number" class="form-control" name="inputValorPago" placeholder="Valor del pago">
             </div>
             <div class="form-group">
-                <input type="text" class="form-control" id="inputCiudad" placeholder="Ciudad">
-            </div>
-            <div class="form-row">
-                
-                <div class="col-md-4 mb-3">
-                    <select class="custom-select" id="validationCustom04" required>
-                        <option selected disabled value="">Provincia</option>
-                        <option>...</option>
-                    </select>
-                    <div class="invalid-feedback">
-                        Please select a valid state.
-                    </div>
-                </div>
-
-                <div class="col-md-4 mb-3">
-                    <select class="custom-select" id="validationCustom04" required>
-                        <option selected disabled value="">Codigo postal</option>
-                        <option>...</option>
-                    </select>
-                    <div class="invalid-feedback">
-                        Please select a valid state.
-                    </div>
-                </div>
-            </div>
-            <div class="form-group">
-                <input type="email" class="form-control" id="inputTelefono" placeholder="Telefono">
-            </div>
-            <div class="form-group">
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="gridCheck">
-                    <label class="form-check-label" for="gridCheck">
-                        Acepto terminos y restricciones
-                    </label>
-                </div>
+                <input type="number" class="form-control" id="inputCiudad" placeholder="IVA">
             </div>
             <div >
                 <div aria-label="Basic example" >
-                    <button  type="button" class="btn btn-info  posicionboton">Pagar</button>
+                    <button  type="button" class="btn btn-info  posicionboton"   >Pagar</button>
                     <button  type="button" class="btn btn-info  separar">Cancelar </button>
                 </div>
             </div>
