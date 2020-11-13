@@ -27,6 +27,9 @@ namespace segundoparcial
             services.AddDbContext<TercerosContext>(p=>p.UseSqlServer(connectionString));
 
             services.AddControllersWithViews();
+
+            // Register the Swagger generator, defining 1 or more Swagger documents
+            services.AddSwaggerGen();
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
             {
@@ -54,6 +57,13 @@ namespace segundoparcial
             {
                 app.UseSpaStaticFiles();
             }
+
+            app.UseSwagger();
+
+            app.UseSwaggerUI(c =>
+            {
+            c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+            });
 
             app.UseRouting();
 

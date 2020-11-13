@@ -8,7 +8,7 @@ using Datos;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
-
+using segundoparcial.Models;
 
 namespace segundoparcial.Controllers
 {
@@ -25,7 +25,46 @@ namespace segundoparcial.Controllers
             _terceroService = new TerceroService(context);
         }
 
+        // GET: api/Persona
+        [HttpGet]
+        public ActionResult<IEnumerable<TerceroViewModel>> Gets()
+        {
+            var response = _terceroService.ConsultarTodos(); 
+            if(response.Error){
+           
+                return BadRequest(response.Mensaje);
+            }
+            var terceros = response.Terceros.Select(p => new TerceroViewModel(p));
+            return Ok(terceros);
+        }
+
+        [HttpPost]
+        public ActionResult<TerceroViewModel> Post(TerceroViewModel personaInput)
+        {
+            Tercero tercero = MapearTercero(personaInput);
+            var response = _terceroService.Guardar(tercero);
+            if (response.Error)
+            {
+                return BadRequest(response.Mensaje);
+            }
+            return Ok(response.Tercero);
+        }
          
+         private Tercero MapearTercero(TerceroInputModel terceroInput)
+        {
+            var tercero = new Tercero
+            {
+                    TerceroID = terceroInput.TerceroID,
+                    TipoDocumento = terceroInput.TipoDocumento,
+                    NombreTercero = terceroInput.NombreTercero,
+                    Direccion = terceroInput.Direccion,
+                    Telefono = terceroInput.Telefono,
+                    Pais = terceroInput.Pais,
+                    Departamento =  terceroInput.Departamento,
+                    Ciudad =  terceroInput.Ciudad
+            };
+            return tercero;
+        }
 
     }
 }
