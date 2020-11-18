@@ -2,7 +2,7 @@
 
     <input [(ngModel)]="searchText" class="form-control form-control-lg" type="text" placeholder="Busqueda... ">
 
-    <table class="table" *ngIf='domiciliarios && domiciliarios.length'>
+    <table class="table" *ngIf='pagos && pagos.length'>
         <thead>
             <tr>
                 <th scope="col">#</th>
@@ -15,7 +15,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let domiciliario of domiciliarios; index as i">
+            <tr *ngFor="let pago of pagos; index as i">
                 <th scope="row">{{ i + 1 }}</th>
                 <td>{{ pago.pagoId}} </td>
                 <td>{{ pago.terceroId}}</td>

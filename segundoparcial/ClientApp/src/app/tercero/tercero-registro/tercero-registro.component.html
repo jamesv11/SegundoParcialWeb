@@ -14,6 +14,12 @@
                     <div *ngIf="f.inputDocumento.errors.required">El correo es requerida</div>
                   </div>
             </div>
+            <div class="form-group">
+                <input type="text" class="form-control" formControlName="inputTipoDocumento" name="inputTipoDocumento" placeholder="Tipo de documento" [ngClass]="{ 'is-invalid': submitted && f.inputTipoDocumento.errors}">
+                 <div *ngIf="submitted && f.inputTipoDocumento.errors" class="invalid-feedback">
+                    <div *ngIf="f.inputTipoDocumento.errors.required">El correo es requerida</div>
+                  </div>
+            </div>
             <div class="form-row">
                 <div class="form-group ">
                     <input type="text" class="form-control" formControlName="inputNombre" name="inputNombre" placeholder="Nombre"

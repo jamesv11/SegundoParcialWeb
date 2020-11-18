@@ -26,6 +26,7 @@ export class TerceroRegistroComponent implements OnInit {
 
     this.tercero = new Tercero();
     this.tercero.terceroID = 0;
+    this.tercero.tipoDocumento =  "";
     this.tercero.nombreTercero = "";
     this.tercero.direccion = "";
     this.tercero.telefono = "";
@@ -36,6 +37,7 @@ export class TerceroRegistroComponent implements OnInit {
     this.registrarTerceroForm = this.formBuilder.group(
       {
         inputDocumento: [this.tercero.terceroID, Validators.required],
+        inputTipoDocumento : [this.tercero.tipoDocumento, Validators.required],
         inputNombre: [this.tercero.nombreTercero, Validators.required],
         inputDireccion: [this.tercero.direccion, Validators.required],
         inputTelefono: [this.tercero.telefono, Validators.required],
