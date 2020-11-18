@@ -10,3 +10,15 @@ C:\Users\JamesV\OneDrive\Escritorio\5 semestre\ProgramacionWeb\Parcial2web\Datos
 C:\Users\JamesV\OneDrive\Escritorio\5 semestre\ProgramacionWeb\Parcial2web\Datos\obj\Debug\netstandard2.0\Datos.csproj.CopyComplete
 C:\Users\JamesV\OneDrive\Escritorio\5 semestre\ProgramacionWeb\Parcial2web\Datos\obj\Debug\netstandard2.0\Datos.dll
 C:\Users\JamesV\OneDrive\Escritorio\5 semestre\ProgramacionWeb\Parcial2web\Datos\obj\Debug\netstandard2.0\Datos.pdb
+C:\Users\JamesVanstrahlen\Desktop\5 semestre\5 semestre\ProgramacionWeb\Parcial2web\Datos\bin\Debug\netstandard2.0\Datos.deps.json
+C:\Users\JamesVanstrahlen\Desktop\5 semestre\5 semestre\ProgramacionWeb\Parcial2web\Datos\bin\Debug\netstandard2.0\Datos.dll
+C:\Users\JamesVanstrahlen\Desktop\5 semestre\5 semestre\ProgramacionWeb\Parcial2web\Datos\bin\Debug\netstandard2.0\Datos.pdb
+C:\Users\JamesVanstrahlen\Desktop\5 semestre\5 semestre\ProgramacionWeb\Parcial2web\Datos\bin\Debug\netstandard2.0\Entidad.dll
+C:\Users\JamesVanstrahlen\Desktop\5 semestre\5 semestre\ProgramacionWeb\Parcial2web\Datos\bin\Debug\netstandard2.0\Entidad.pdb
+C:\Users\JamesVanstrahlen\Desktop\5 semestre\5 semestre\ProgramacionWeb\Parcial2web\Datos\obj\Debug\netstandard2.0\Datos.csprojAssemblyReference.cache
+C:\Users\JamesVanstrahlen\Desktop\5 semestre\5 semestre\ProgramacionWeb\Parcial2web\Datos\obj\Debug\netstandard2.0\Datos.AssemblyInfoInputs.cache
+C:\Users\JamesVanstrahlen\Desktop\5 semestre\5 semestre\ProgramacionWeb\Parcial2web\Datos\obj\Debug\netstandard2.0\Datos.AssemblyInfo.cs
+C:\Users\JamesVanstrahlen\Desktop\5 semestre\5 semestre\ProgramacionWeb\Parcial2web\Datos\obj\Debug\netstandard2.0\Datos.csproj.CoreCompileInputs.cache
+C:\Users\JamesVanstrahlen\Desktop\5 semestre\5 semestre\ProgramacionWeb\Parcial2web\Datos\obj\Debug\netstandard2.0\Datos.csproj.CopyComplete
+C:\Users\JamesVanstrahlen\Desktop\5 semestre\5 semestre\ProgramacionWeb\Parcial2web\Datos\obj\Debug\netstandard2.0\Datos.dll
+C:\Users\JamesVanstrahlen\Desktop\5 semestre\5 semestre\ProgramacionWeb\Parcial2web\Datos\obj\Debug\netstandard2.0\Datos.pdb

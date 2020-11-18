@@ -12,15 +12,15 @@ import { Tercero } from '../models/tercero';
 })
 export class TerceroRegistroComponent implements OnInit {
 
-  
 
-  @Input() Identificacion : string;
+
+  @Input() Identificacion: string;
   submitted = false
-  registrarTerceroForm:FormGroup;
-  tercero : Tercero;
+  registrarTerceroForm: FormGroup;
+  tercero: Tercero;
 
-  constructor(private modalService: NgbModal,public activeModal: NgbActiveModal,private terceroService : TerceroService,
-    private formBuilder : FormBuilder) { }
+  constructor(private modalService: NgbModal, public activeModal: NgbActiveModal, private terceroService: TerceroService,
+    private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
 
@@ -33,39 +33,39 @@ export class TerceroRegistroComponent implements OnInit {
     this.tercero.departamento = "";
     this.tercero.ciudad = "";
 
-    this.registrarTerceroForm =  this.formBuilder.group(
+    this.registrarTerceroForm = this.formBuilder.group(
       {
-        inputDocumento : [this.tercero.terceroID,Validators.required],
-        inputNombre : [this.tercero.nombreTercero,Validators.required],
-        inputDireccion  : [this.tercero.direccion,Validators.required],
-        inputTelefono : [this.tercero.telefono,Validators.required],
-        inputPais : [this.tercero.pais,Validators.required],
-        inputDepartamento : [this.tercero.departamento,Validators.required],
-        inputCiudad : [this.tercero.ciudad,Validators.required]
+        inputDocumento: [this.tercero.terceroID, Validators.required],
+        inputNombre: [this.tercero.nombreTercero, Validators.required],
+        inputDireccion: [this.tercero.direccion, Validators.required],
+        inputTelefono: [this.tercero.telefono, Validators.required],
+        inputPais: [this.tercero.pais, Validators.required],
+        inputDepartamento: [this.tercero.departamento, Validators.required],
+        inputCiudad: [this.tercero.ciudad, Validators.required]
       }
     );
   }
 
-  get f() {return this.registrarTerceroForm.controls; };
+  get f() { return this.registrarTerceroForm.controls; };
 
-  OnSubmit(){
+  OnSubmit() {
     this.submitted = true;
-    if(this.registrarTerceroForm.invalid)
-    {
+    if (this.registrarTerceroForm.invalid) {
       return;
     }
     this.add();
   }
 
-  add()
-  {
+  add() {
+    this.tercero = this.registrarTerceroForm.value;
     this.terceroService.post(this.tercero).subscribe((p) => {
-      if(p != null)
-      {
+      if (p != null) {
+        console.log(p);
         const messageBox = this.modalService.open(AlertModalComponent)
         messageBox.componentInstance.title = "Proceso terminado";
         messageBox.componentInstance.message = "Exitoso";
-        
+        this.tercero = p;
+
       }
     });
   }
@@ -73,5 +73,5 @@ export class TerceroRegistroComponent implements OnInit {
   onReset() {
     this.submitted = false;
     this.registrarTerceroForm.reset();
-}
+  }
 }

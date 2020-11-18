@@ -7,7 +7,7 @@
 
 <div class="modal-body">
     <div class="container">
-        <form [formGroup]="registrarTerceroForm" (ngSubmit)="OnSubmit()">
+        <form [formGroup]="registrarTerceroForm" >
             <div class="form-group">
                 <input type="text" class="form-control" formControlName="inputDocumento" name="inputDocumento" placeholder="Numero de identificacion" [ngClass]="{ 'is-invalid': submitted && f.inputDocumento.errors}">
                  <div *ngIf="submitted && f.inputDocumento.errors" class="invalid-feedback">
@@ -64,7 +64,7 @@
             </div>
             <div>
                 <div aria-label="Basic example">
-                    <button type="button" class="btn btn-outline-secondary" [disabled]="registrarTerceroForm.invalid">Registrar</button>
+                    <button type="button" class="btn btn-outline-secondary"(click)="OnSubmit()" [disabled]="registrarTerceroForm.invalid">Registrar</button>
                     <button type="button" class="btn btn-outline-secondary separar">Cancelar</button>
                 </div>
             </div>

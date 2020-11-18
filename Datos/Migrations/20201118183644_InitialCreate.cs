@@ -35,8 +35,8 @@ namespace Datos.Migrations
                     TerceroID = table.Column<int>(nullable: false),
                     TipoPago = table.Column<string>(nullable: true),
                     FechaPago = table.Column<DateTime>(nullable: false),
-                    ValorPago = table.Column<decimal>(nullable: false),
-                    IVA = table.Column<decimal>(nullable: false)
+                    ValorPago = table.Column<decimal>(type: "decimal(12,2)", nullable: false),
+                    IVA = table.Column<decimal>(type: "decimal(12,2)", nullable: false)
                 },
                 constraints: table =>
                 {

@@ -26,6 +26,7 @@ export class TerceroService {
       );
     }
     post(tercero: Tercero): Observable<Tercero>{
+      console.log(tercero);
       return this.http.post<Tercero>(this.baseUrl + 'api/Tercero',tercero).pipe(
         tap(_ => this.handleErrorService.log('datos enviados')),
         catchError(this.handleErrorService.handleError<Tercero>('Registrar Cliente',null))

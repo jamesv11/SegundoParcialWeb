@@ -39,9 +39,9 @@ namespace segundoparcial.Controllers
         }
 
         [HttpPost]
-        public ActionResult<TerceroViewModel> Post(TerceroViewModel personaInput)
+        public ActionResult<TerceroViewModel> Post(TerceroViewModel terceroInput)
         {
-            Tercero tercero = MapearTercero(personaInput);
+            Tercero tercero = MapearTercero(terceroInput);
             var response = _terceroService.Guardar(tercero);
             if (response.Error)
             {
