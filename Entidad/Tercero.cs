@@ -7,6 +7,8 @@ namespace Entidad
     public class Tercero
     {
         public int TerceroID { get; set; }
+
+        public string TerceroIdentificacion { get; set; }
         public string TipoDocumento { get; set; }
         public string NombreTercero { get; set; }
         public string Direccion { get; set; }

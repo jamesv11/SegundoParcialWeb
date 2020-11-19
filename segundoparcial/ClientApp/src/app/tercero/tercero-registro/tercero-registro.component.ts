@@ -25,7 +25,7 @@ export class TerceroRegistroComponent implements OnInit {
   ngOnInit(): void {
 
     this.tercero = new Tercero();
-    this.tercero.terceroID = 0;
+    this.tercero.terceroIdentificacion = "";
     this.tercero.tipoDocumento =  "";
     this.tercero.nombreTercero = "";
     this.tercero.direccion = "";
@@ -36,14 +36,14 @@ export class TerceroRegistroComponent implements OnInit {
 
     this.registrarTerceroForm = this.formBuilder.group(
       {
-        inputDocumento: [this.tercero.terceroID, Validators.required],
-        inputTipoDocumento : [this.tercero.tipoDocumento, Validators.required],
-        inputNombre: [this.tercero.nombreTercero, Validators.required],
-        inputDireccion: [this.tercero.direccion, Validators.required],
-        inputTelefono: [this.tercero.telefono, Validators.required],
-        inputPais: [this.tercero.pais, Validators.required],
-        inputDepartamento: [this.tercero.departamento, Validators.required],
-        inputCiudad: [this.tercero.ciudad, Validators.required]
+        terceroIdentificacion: [this.tercero.terceroIdentificacion, Validators.required],
+        tipoDocumento : [this.tercero.tipoDocumento, Validators.required],
+        nombreTercero: [this.tercero.nombreTercero, Validators.required],
+        direccion: [this.tercero.direccion, Validators.required],
+        telefono: [this.tercero.telefono, Validators.required],
+        pais: [this.tercero.pais, Validators.required],
+        departamento: [this.tercero.departamento, Validators.required],
+        ciudad: [this.tercero.ciudad, Validators.required]
       }
     );
   }
@@ -60,6 +60,7 @@ export class TerceroRegistroComponent implements OnInit {
 
   add() {
     this.tercero = this.registrarTerceroForm.value;
+    console.log(this.tercero);
     this.terceroService.post(this.tercero).subscribe((p) => {
       if (p != null) {
         console.log(p);
@@ -67,7 +68,7 @@ export class TerceroRegistroComponent implements OnInit {
         messageBox.componentInstance.title = "Proceso terminado";
         messageBox.componentInstance.message = "Exitoso";
         
-
+        this.tercero = p;
       }
     });
   }

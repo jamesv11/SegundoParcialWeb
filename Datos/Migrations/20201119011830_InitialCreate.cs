@@ -13,6 +13,7 @@ namespace Datos.Migrations
                 {
                     TerceroID = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    TerceroIdentificacion = table.Column<string>(nullable: true),
                     TipoDocumento = table.Column<string>(nullable: true),
                     NombreTercero = table.Column<string>(nullable: true),
                     Direccion = table.Column<string>(nullable: true),

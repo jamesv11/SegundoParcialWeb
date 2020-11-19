@@ -1,5 +1,5 @@
 export class Tercero {
-    terceroID : number;
+    terceroIdentificacion : string;
     tipoDocumento : string;
     nombreTercero : string;
     direccion : string;
@@ -9,3 +9,4 @@ export class Tercero {
     ciudad : string;
     
 }
+

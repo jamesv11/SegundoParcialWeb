@@ -55,6 +55,7 @@ namespace segundoparcial.Controllers
             var tercero = new Tercero
             {
                     TerceroID = terceroInput.TerceroID,
+                    TerceroIdentificacion = terceroInput.TerceroIdentificacion,
                     TipoDocumento = terceroInput.TipoDocumento,
                     NombreTercero = terceroInput.NombreTercero,
                     Direccion = terceroInput.Direccion,

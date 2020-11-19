@@ -73,6 +73,9 @@ namespace Datos.Migrations
                     b.Property<string>("Telefono")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("TerceroIdentificacion")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("TipoDocumento")
                         .HasColumnType("nvarchar(max)");
 

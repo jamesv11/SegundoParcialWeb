@@ -7,6 +7,8 @@ namespace segundoparcial.Models
     public class TerceroInputModel
     {
         public int TerceroID { get; set; }
+
+        public string TerceroIdentificacion { get; set; }
         public string TipoDocumento { get; set; }
         public string NombreTercero { get; set; }
         public string Direccion { get; set; }
@@ -23,8 +25,8 @@ namespace segundoparcial.Models
 
         }
         public TerceroViewModel(Tercero tercero)
-        {
-            TerceroID = tercero.TerceroID;
+        {   
+            TerceroIdentificacion = tercero.TerceroIdentificacion;
             TipoDocumento = tercero.TipoDocumento;
             NombreTercero =  tercero.NombreTercero;
             Direccion =  tercero.Direccion;
