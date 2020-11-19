@@ -11,9 +11,8 @@ namespace Datos.Migrations
                 name: "Terceros",
                 columns: table => new
                 {
-                    TerceroID = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    TerceroIdentificacion = table.Column<string>(nullable: true),
+                    TerceroIdentificacion = table.Column<string>(nullable: false),
+                    TerceroID = table.Column<int>(nullable: false),
                     TipoDocumento = table.Column<string>(nullable: true),
                     NombreTercero = table.Column<string>(nullable: true),
                     Direccion = table.Column<string>(nullable: true),
@@ -24,7 +23,7 @@ namespace Datos.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Terceros", x => x.TerceroID);
+                    table.PrimaryKey("PK_Terceros", x => x.TerceroIdentificacion);
                 });
 
             migrationBuilder.CreateTable(
@@ -33,7 +32,7 @@ namespace Datos.Migrations
                 {
                     PagoID = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    TerceroID = table.Column<int>(nullable: false),
+                    TerceroIdentificacion = table.Column<string>(nullable: true),
                     TipoPago = table.Column<string>(nullable: true),
                     FechaPago = table.Column<DateTime>(nullable: false),
                     ValorPago = table.Column<decimal>(type: "decimal(12,2)", nullable: false),
@@ -43,17 +42,17 @@ namespace Datos.Migrations
                 {
                     table.PrimaryKey("PK_Pagos", x => x.PagoID);
                     table.ForeignKey(
-                        name: "FK_Pagos_Terceros_TerceroID",
-                        column: x => x.TerceroID,
+                        name: "FK_Pagos_Terceros_TerceroIdentificacion",
+                        column: x => x.TerceroIdentificacion,
                         principalTable: "Terceros",
-                        principalColumn: "TerceroID",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "TerceroIdentificacion",
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Pagos_TerceroID",
+                name: "IX_Pagos_TerceroIdentificacion",
                 table: "Pagos",
-                column: "TerceroID");
+                column: "TerceroIdentificacion");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

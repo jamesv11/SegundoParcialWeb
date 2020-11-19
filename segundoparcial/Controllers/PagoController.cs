@@ -22,10 +22,22 @@ namespace segundoparcial.Controllers
         }
 
         // GET: api/Persona/id
-        [HttpGet("{terceroId}")]
-        public ActionResult<IEnumerable<PagoViewModel>> Gets(int terceroId)
+        [HttpGet("{terceroIdentificacion}")]
+        public ActionResult<IEnumerable<PagoViewModel>> Gets(string terceroIdentificacion)
         {
-            var response = _PagoService.ConsultarTodos(terceroId); 
+            var response = _PagoService.ConsultarIndividual(terceroIdentificacion); 
+            if(response.Error){
+           
+                return BadRequest(response.Mensaje);
+            }
+            var terceros = response.Pagos.Select(p => new PagoViewModel(p));
+            return Ok(terceros);
+        }
+
+        [HttpGet]
+        public ActionResult<IEnumerable<PagoViewModel>> Gets()
+        {
+            var response = _PagoService.ConsultarTodos(); 
             if(response.Error){
            
                 return BadRequest(response.Mensaje);
@@ -50,7 +62,7 @@ namespace segundoparcial.Controllers
         {
             var pago = new Pago
             {
-                    TerceroID = pagoInput.TerceroID,
+                    TerceroIdentificacion = pagoInput.TerceroIdentificacion,
                     TipoPago = pagoInput.TipoPago,
                     FechaPago = pagoInput.FechaPago,
                     ValorPago = pagoInput.ValorPago,

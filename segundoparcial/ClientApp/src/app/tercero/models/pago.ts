@@ -1,7 +1,7 @@
 export class Pago {
 
     pagoId : number;
-    terceroId : number;
+    terceroIdentificacion : string;
     tipoPago : string;
     fechaPago : Date;
     valorPago : number;

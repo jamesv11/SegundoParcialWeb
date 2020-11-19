@@ -3,19 +3,22 @@
         <h2>Realizar pago</h2>
     </div>
     <div>
-        <form>
+        <form [formGroup]="registerPagoForm">
             <div class="form-row">
                 <div class="form-group col-md-6">
-                    <input type="text" class="form-control " id="inputIdentidad" placeholder="Numero de identidad">
+                    <input type="text" class="form-control" formControlName="terceroIdentificacion" name="terceroIdentificacion" placeholder="Numero de identidad" [ngClass]="{ 'is-invalid': submitted && f.terceroIdentificacion.errors}">
+                    <div *ngIf="submitted && f.terceroIdentificacion.errors" class="invalid-feedback">
+                        <div *ngIf="f.terceroIdentificacion.errors.required">El correo es requerida</div>
+                      </div>
                 </div>
                 <div >
                     <button class="btn btn-info btn-lg" type="button" (click)="Verificar()" >Verificar</button>
                 </div>
             </div>
             <div class="form-group">
-                <label for="exampleFormControlSelect1">Seleccione el tipo de pago</label>
-                <select class="form-control" id="exampleFormControlSelect1">
-                <option selected>Seleccione...</option>
+                <label for="tipoPago">Seleccione el tipo de pago</label>
+                <select class="form-control" name="tipoPago" formControlName="tipoPago" [ngClass]="{ 'is-invalid': submitted && f.tipoPago.errors}">
+                  <option selected>Seleccione...</option>
                   <option>Gastos Administrativos</option>
                   <option>Gastos Financieros</option>
                   <option>Gastos Legales</option>
@@ -24,20 +27,32 @@
                   <option>Arrendamiento</option>
                   <option>Impuestos y retenciones</option>         
                 </select>
-              </div>
-            <div class="form-group">
-                <label for="inputFecha">Fecha de pago</label>
-                <input type="date" class="form-control" name="inputFecha">
+                <div *ngIf="submitted && f.tipoPago.errors" class="invalid-feedback">
+                    <div *ngIf="f.tipoPago.errors.required">El correo es requerida</div>
+                  </div>
             </div>
             <div class="form-group">
-                <input type="number" class="form-control" name="inputValorPago" placeholder="Valor del pago">
+                <label for="fecha">Fecha de pago</label>
+                <input type="date" class="form-control" name="fechaPago" formControlName="fechaPago" [ngClass]="{ 'is-invalid': submitted && f.fechaPago.errors}">
+                <div *ngIf="submitted && f.fechaPago.errors" class="invalid-feedback">
+                    <div *ngIf="f.fechaPago.errors.required">El correo es requerida</div>
+                </div>
             </div>
             <div class="form-group">
-                <input type="number" class="form-control" id="inputCiudad" placeholder="IVA">
+                <input type="number" class="form-control" name="valorPago" formControlName="valorPago" placeholder="Valor del pago" [ngClass]="{ 'is-invalid': submitted && f.valorPago.errors}">
+                <div *ngIf="submitted && f.valorPago.errors" class="invalid-feedback">
+                    <div *ngIf="f.valorPago.errors.required">El correo es requerida</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="number" class="form-control" name="iva" placeholder="IVA" formControlName="iva" [ngClass]="{ 'is-invalid': submitted && f.iva.errors}">
+                <div *ngIf="submitted && f.iva.errors" class="invalid-feedback">
+                    <div *ngIf="f.iva.errors.required">El correo es requerida</div>
+                </div>
             </div>
             <div >
                 <div aria-label="Basic example" >
-                    <button  type="button" class="btn btn-info  posicionboton"   >Pagar</button>
+                    <button  type="button" class="btn btn-info  posicionboton" (click)="OnSubmit()" [disabled]="registerPagoForm.invalid">Pagar</button>
                     <button  type="button" class="btn btn-info  separar">Cancelar </button>
                 </div>
             </div>

@@ -7,7 +7,7 @@
             <tr>
                 <th scope="col">#</th>
                 <th scope="col">PagoId</th>
-                <th scope="col">TerceroId</th>
+                <th scope="col">TerceroIdentificacion</th>
                 <th scope="col">Tipopago</th>
                 <th scope="col">Fechapago</th>
                 <th scope="col">ValorPago</th>
@@ -15,10 +15,10 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let pago of pagos; index as i">
+            <tr *ngFor="let pago of pagos|filtroIdentificacion:searchText; index as i">
                 <th scope="row">{{ i + 1 }}</th>
                 <td>{{ pago.pagoId}} </td>
-                <td>{{ pago.terceroId}}</td>
+                <td>{{ pago.terceroIdentificacion}}</td>
                 <td>{{ pago.tipoPago}}</td>
                 <td>{{ pago.fechaPago}}</td>
                 <td>{{ pago.valorPago}}</td>

@@ -7,7 +7,7 @@ namespace segundoparcial.Models
     public class PagoInputModel
     {
 
-        public int TerceroID { get; set; }
+        public string TerceroIdentificacion { get; set; }
         public String TipoPago { get; set; }
         public DateTime FechaPago { get; set; }
         public decimal ValorPago { get; set; }
@@ -25,7 +25,7 @@ namespace segundoparcial.Models
         public PagoViewModel(Pago pago)
         {
 
-           TerceroID = pago.TerceroID;
+           TerceroIdentificacion = pago.TerceroIdentificacion;
            TipoPago = pago.TipoPago;
            FechaPago = pago.FechaPago;
            ValorPago = pago.ValorPago;

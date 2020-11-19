@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { TerceroService } from 'src/app/services/tercero.service';
-import { Tercero } from '../models/tercero';
+import { AlertModalComponent } from 'src/app/@base/alert-modal/alert-modal.component';
+import { PagoService } from 'src/app/services/pago.service';
+import { Pago } from '../models/pago';
 import { TerceroRegistroComponent } from '../tercero-registro/tercero-registro.component';
 
 @Component({
@@ -12,14 +14,69 @@ import { TerceroRegistroComponent } from '../tercero-registro/tercero-registro.c
 export class PagoRegistroComponent implements OnInit {
 
 
-  constructor(private terceroService: TerceroService,private modalService: NgbModal) { }
+  constructor(private pagoService : PagoService,private formBuilder :  FormBuilder  ,private modalService: NgbModal) { }
 
-  
-  Terceros : Tercero[] = [];
+  identificacion : string;
+  submitted = false;
+  registerPagoForm : FormGroup; 
+  pago : Pago;
   ngOnInit(): void {
+
+    this.pago =  new Pago();
+    this.pago.terceroIdentificacion = "";
+    this.pago.tipoPago = "Seleccione...";
+    this.pago.fechaPago = new Date;
+    this.pago.valorPago = null;
+    this.pago.iva = null;
+
+    this.registerPagoForm = this.formBuilder.group(
+      {
+        terceroIdentificacion : [this.pago.terceroIdentificacion,Validators.required],
+        tipoPago : [this.pago.tipoPago,Validators.required],
+        fechaPago : "",
+        valorPago : [this.pago.valorPago,Validators.required],
+        iva : [this.pago.iva,Validators.required]
+      }
+    );
 
   }
 
+  get f() { return this.registerPagoForm.controls; };
+
+  OnSubmit() {
+    this.submitted = true;
+    if (this.registerPagoForm.invalid) {
+      return;
+    }
+    this.add();
+  }
+
+  add() {
+    this.pago = this.registerPagoForm.value;
+    console.log(this.pago);
+    this.pagoService.post(this.pago).subscribe((p) => {
+      if (p != null) {
+        console.log(p);
+        const messageBox = this.modalService.open(AlertModalComponent)
+        messageBox.componentInstance.title = "Proceso terminado";
+        messageBox.componentInstance.message = "Exitoso";
+        
+        this.pago = p;
+      }
+    });
+  }
+  onReset() {
+    this.submitted = false;
+    this.registerPagoForm.reset();
+  }
+  /*
+   pagoId : number;
+    terceroIdentificacion : string;
+    tipoPago : string;
+    fechaPago : Date;
+    valorPago : number;
+    iva : number; 
+  */
   AbrirRegistro(){
     const consultaBox = this.modalService.open(TerceroRegistroComponent); 
    

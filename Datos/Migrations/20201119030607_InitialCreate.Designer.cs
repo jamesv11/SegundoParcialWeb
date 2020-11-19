@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Datos.Migrations
 {
     [DbContext(typeof(TercerosContext))]
-    [Migration("20201119011830_InitialCreate")]
+    [Migration("20201119030607_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -34,8 +34,8 @@ namespace Datos.Migrations
                     b.Property<decimal>("IVA")
                         .HasColumnType("decimal(12,2)");
 
-                    b.Property<int>("TerceroID")
-                        .HasColumnType("int");
+                    b.Property<string>("TerceroIdentificacion")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("TipoPago")
                         .HasColumnType("nvarchar(max)");
@@ -45,17 +45,15 @@ namespace Datos.Migrations
 
                     b.HasKey("PagoID");
 
-                    b.HasIndex("TerceroID");
+                    b.HasIndex("TerceroIdentificacion");
 
                     b.ToTable("Pagos");
                 });
 
             modelBuilder.Entity("Entidad.Tercero", b =>
                 {
-                    b.Property<int>("TerceroID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                    b.Property<string>("TerceroIdentificacion")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Ciudad")
                         .HasColumnType("nvarchar(max)");
@@ -75,13 +73,13 @@ namespace Datos.Migrations
                     b.Property<string>("Telefono")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("TerceroIdentificacion")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("TerceroID")
+                        .HasColumnType("int");
 
                     b.Property<string>("TipoDocumento")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("TerceroID");
+                    b.HasKey("TerceroIdentificacion");
 
                     b.ToTable("Terceros");
                 });
@@ -90,9 +88,7 @@ namespace Datos.Migrations
                 {
                     b.HasOne("Entidad.Tercero", "Tercero")
                         .WithMany("ListaPagos")
-                        .HasForeignKey("TerceroID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("TerceroIdentificacion");
                 });
 #pragma warning restore 612, 618
         }

@@ -17,7 +17,11 @@ namespace Datos
             modelBuilder.Entity<Pago>()
             .HasOne<Tercero>(c => c.Tercero)
             .WithMany( c => c.ListaPagos)
-            .HasForeignKey(c => c.TerceroID);
+            .HasForeignKey(c => c.TerceroIdentificacion);
+
+            modelBuilder.Entity<Tercero>()
+            .HasKey(t => t.TerceroIdentificacion);
+            
         }
     }
 }

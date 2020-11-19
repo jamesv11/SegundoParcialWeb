@@ -20,7 +20,7 @@ namespace Logica
         {
             try
             {
-                var personaBuscada = _context.Terceros.Find(tercero.TerceroID);
+                var personaBuscada = _context.Terceros.Find(tercero.TerceroIdentificacion);
                 if(personaBuscada != null)
                 {
                     return new GuardarTerceroResponse("Error la persona se encuentra registrada");

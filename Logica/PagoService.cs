@@ -34,11 +34,11 @@ namespace Logica
             }
             
         }    
-         public ConsultarPagoResponse ConsultarTodos(int terceroID)
+         public ConsultarPagoResponse ConsultarIndividual(string identificacionTercero)
         {
             try
             {
-                var pagos = _context.Pagos.Where(p => p.TerceroID == terceroID).ToList();
+                var pagos = _context.Pagos.Where(p => p.TerceroIdentificacion == identificacionTercero).ToList();
                 return new ConsultarPagoResponse(pagos);
 
             }
@@ -47,7 +47,22 @@ namespace Logica
                 return new ConsultarPagoResponse($"error de aplicacion: {e.Message}");
             }
 
-        }    
+        }  
+
+        public ConsultarPagoResponse ConsultarTodos()
+        {
+            try
+            {
+                var pagos = _context.Pagos.ToList();
+                return new ConsultarPagoResponse(pagos);
+
+            }
+            catch (Exception e)
+            {
+                return new ConsultarPagoResponse($"error de aplicacion: {e.Message}");
+            }
+
+        }     
     }
 
     public class GuardarPagoResponse

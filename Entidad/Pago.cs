@@ -9,7 +9,7 @@ namespace Entidad
         //relacion
 
         public int PagoID { get; set; }
-        public int TerceroID { get; set; }
+        public string TerceroIdentificacion { get; set; }
         public String TipoPago { get; set; }
         public DateTime FechaPago { get; set; }
         

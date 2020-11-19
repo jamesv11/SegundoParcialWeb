@@ -20,6 +20,7 @@ import { TerceroConsultaComponent } from './tercero/tercero-consulta/tercero-con
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { PagoConsultaComponent } from './tercero/pago-consulta/pago-consulta.component';
+import { FiltroIdentificacionPipe } from './pipe/filtro-identificacion.pipe';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { PagoConsultaComponent } from './tercero/pago-consulta/pago-consulta.com
     TerceroConsultaComponent,
     FooterComponent,
     HeaderComponent,
-    PagoConsultaComponent
+    PagoConsultaComponent,
+    FiltroIdentificacionPipe
   ],
   imports: [
     NgbModule,
