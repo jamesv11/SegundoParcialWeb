@@ -19,6 +19,21 @@ namespace Datos.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+            modelBuilder.Entity("Entidad.ImagenTercero", b =>
+                {
+                    b.Property<int>("ImagenTerceroID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<byte[]>("Imagen")
+                        .HasColumnType("varbinary(max)");
+
+                    b.HasKey("ImagenTerceroID");
+
+                    b.ToTable("ImagenTercero");
+                });
+
             modelBuilder.Entity("Entidad.Pago", b =>
                 {
                     b.Property<int>("PagoID")
@@ -60,6 +75,9 @@ namespace Datos.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Direccion")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("NombreFoto")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("NombreTercero")

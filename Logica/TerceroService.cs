@@ -48,7 +48,22 @@ namespace Logica
                 return new ConsultarTerceroResponse($"error de aplicacion: {e.Message}");
             }
 
-        }    
+        }   
+
+         public ConsultarTerceroIdentificacionResponse ConsultarIdentificacion(string TerceroIdentificacion)
+        {
+            try
+            {
+                var tercero = _context.Terceros.Find(TerceroIdentificacion);
+                return new ConsultarTerceroIdentificacionResponse(tercero);
+
+            }
+            catch (Exception e)
+            {
+                return new ConsultarTerceroIdentificacionResponse($"error de aplicacion: {e.Message}");
+            }
+
+        }  
     }
 
     public class GuardarTerceroResponse
@@ -83,5 +98,24 @@ namespace Logica
         public bool Error { get; set; }
         public string Mensaje { get; set; }
         public List<Tercero> Terceros { get; set; }
+    }
+
+    public class ConsultarTerceroIdentificacionResponse
+    {
+        public ConsultarTerceroIdentificacionResponse(Tercero tercero)
+        {
+            Error = false;
+            Tercero = tercero;
+        }
+
+        public ConsultarTerceroIdentificacionResponse(string mensaje)
+        {
+            Error = true;
+            Mensaje = mensaje;
+        }
+
+        public bool Error { get; set; }
+        public string Mensaje { get; set; }
+        public Tercero Tercero { get; set; }
     }
 }

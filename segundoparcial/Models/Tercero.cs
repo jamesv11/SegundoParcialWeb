@@ -16,6 +16,7 @@ namespace segundoparcial.Models
         public string Pais { get; set; }
         public string Departamento { get; set; }
         public string Ciudad { get; set; }
+        public string NombreFoto { get; set; }
     }
 
     public class TerceroViewModel : TerceroInputModel
@@ -34,6 +35,7 @@ namespace segundoparcial.Models
             Pais = tercero.Pais;
             Departamento = tercero.Departamento;
             Ciudad = tercero.Ciudad;
+            NombreFoto =  tercero.NombreFoto;
         }
     }
 

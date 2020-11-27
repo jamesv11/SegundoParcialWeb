@@ -5,6 +5,7 @@ import { PagoRegistroComponent } from './tercero/pago-registro/pago-registro.com
 import { PagoConsultaComponent } from './tercero/pago-consulta/pago-consulta.component';
 import { HomeComponent } from './home/home.component';
 import { TerceroRegistroComponent } from './tercero/tercero-registro/tercero-registro.component';
+import { SubirfotoComponent } from './tercero/subirfoto/subirfoto.component';
 
 const routes : Routes = [
   {
@@ -25,6 +26,11 @@ const routes : Routes = [
   {
     path:'terceroRegistro',
     component: TerceroRegistroComponent
+  }
+  ,
+  {
+    path:'subirFoto',
+    component: SubirfotoComponent
   }
 
 ];

@@ -16,7 +16,7 @@ namespace Entidad
         public string Pais { get; set; }
         public string Departamento { get; set; }
         public string Ciudad { get; set; }
-
+        public string NombreFoto { get; set; }
         public virtual List<Pago> ListaPagos { get; set; }
     }
 }

@@ -1,0 +1,16 @@
+    <div class="col-lg-4 mx-auto">
+        <div class="card">
+            <div class="header" >
+                <h2>Subir foto</h2>
+            </div>
+            
+            <div class="card-body">
+                <form (submit)="uploadPhoto()">
+                    <input type="file" class="d-none" (change)="onPhotoSelected($event)" #photoInput>
+                    <img [src]="selectedFile || 'assets/Noimage.jpg'" class="img-fluid" alt="no imagen" (click)="photoInput.click()">
+                
+                <button class="btn btn-primary btn-block"> Subir </button>
+                </form>
+            </div>
+        </div>
+    </div>

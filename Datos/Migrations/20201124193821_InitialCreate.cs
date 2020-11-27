@@ -8,6 +8,19 @@ namespace Datos.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
+                name: "ImagenTercero",
+                columns: table => new
+                {
+                    ImagenTerceroID = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Imagen = table.Column<byte[]>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ImagenTercero", x => x.ImagenTerceroID);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Terceros",
                 columns: table => new
                 {
@@ -19,7 +32,8 @@ namespace Datos.Migrations
                     Telefono = table.Column<string>(nullable: true),
                     Pais = table.Column<string>(nullable: true),
                     Departamento = table.Column<string>(nullable: true),
-                    Ciudad = table.Column<string>(nullable: true)
+                    Ciudad = table.Column<string>(nullable: true),
+                    NombreFoto = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -57,6 +71,9 @@ namespace Datos.Migrations
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropTable(
+                name: "ImagenTercero");
+
             migrationBuilder.DropTable(
                 name: "Pagos");
 

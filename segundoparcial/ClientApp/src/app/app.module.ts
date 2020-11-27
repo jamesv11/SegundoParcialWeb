@@ -21,6 +21,7 @@ import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { PagoConsultaComponent } from './tercero/pago-consulta/pago-consulta.component';
 import { FiltroIdentificacionPipe } from './pipe/filtro-identificacion.pipe';
+import { SubirfotoComponent } from './tercero/subirfoto/subirfoto.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { FiltroIdentificacionPipe } from './pipe/filtro-identificacion.pipe';
     FooterComponent,
     HeaderComponent,
     PagoConsultaComponent,
-    FiltroIdentificacionPipe
+    FiltroIdentificacionPipe,
+    SubirfotoComponent
   ],
   imports: [
     NgbModule,

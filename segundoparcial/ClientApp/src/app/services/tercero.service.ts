@@ -22,9 +22,18 @@ export class TerceroService {
     get(): Observable<Tercero[]>{
       return this.http.get<Tercero[]>(this.baseUrl + 'api/Tercero')
       .pipe(
-        tap(_=> this.handleErrorService.handleError<Tercero[]>('Consulta Cliente',null))  
+        tap(_=> this.handleErrorService.handleError<Tercero[]>('Consultar Cliente',null))  
       );
     }
+
+    getId(terceroIdentificacion : string): Observable<Tercero>{
+      return this.http.get<Tercero>(this.baseUrl + 'api/Tercero/' + terceroIdentificacion)
+      .pipe(
+        tap(_=> this.handleErrorService.handleError<Tercero>('Consultar Tercero',null)),
+        catchError(this.handleErrorService.handleError<Tercero>('Consulta de Tercero', null)) 
+      );
+    }
+
     post(tercero: Tercero): Observable<Tercero>{
       console.log(tercero + "hola");
       return this.http.post<Tercero>(this.baseUrl + 'api/Tercero',tercero).pipe(

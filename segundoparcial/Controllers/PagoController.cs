@@ -38,12 +38,13 @@ namespace segundoparcial.Controllers
         public ActionResult<IEnumerable<PagoViewModel>> Gets()
         {
             var response = _PagoService.ConsultarTodos(); 
+          
             if(response.Error){
-           
+                
                 return BadRequest(response.Mensaje);
             }
-            var terceros = response.Pagos.Select(p => new PagoViewModel(p));
-            return Ok(terceros);
+            var pagos = response.Pagos.Select(p => new PagoViewModel(p));
+            return Ok(pagos);
         }
 
         [HttpPost]

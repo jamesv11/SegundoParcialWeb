@@ -66,12 +66,13 @@ export class TerceroRegistroComponent implements OnInit {
         console.log(p);
         const messageBox = this.modalService.open(AlertModalComponent)
         messageBox.componentInstance.title = "Proceso terminado";
-        messageBox.componentInstance.message = "Exitoso";
-        
+        messageBox.componentInstance.message = "Exitoso";       
         this.tercero = p;
       }
     });
   }
+
+  
 
   onReset() {
     this.submitted = false;

@@ -62,7 +62,19 @@ namespace Logica
                 return new ConsultarPagoResponse($"error de aplicacion: {e.Message}");
             }
 
-        }     
+        } 
+
+        public RespuestaTotalizar ValorTotalPagos()
+        {
+            try{
+                var total =  _context.Pagos.Sum(p => p.ValorPago);  
+                return new RespuestaTotalizar(total);
+            }
+            catch(Exception e )
+            {
+                return new RespuestaTotalizar($"error de aplicacion :  {e.Message} ");
+            }
+        }
     }
 
     public class GuardarPagoResponse
@@ -97,5 +109,22 @@ namespace Logica
         public bool Error { get; set; }
         public string Mensaje { get; set; }
         public List<Pago> Pagos { get; set; }
+    }
+
+    public class RespuestaTotalizar
+    {
+        public RespuestaTotalizar(decimal totalValorPagos)
+        {
+            Error = false;
+            TotalValorPagos = totalValorPagos;
+        }
+        public RespuestaTotalizar(string mensaje)
+        {
+            Error = true;
+            Mensaje = mensaje;
+        }
+        public bool Error { get; set; }
+        public string Mensaje { get; set; }
+        public decimal TotalValorPagos { get; set; }
     }
 }

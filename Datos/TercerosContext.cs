@@ -12,6 +12,8 @@ namespace Datos
         public DbSet<Tercero> Terceros { get; set; }
         public DbSet<Pago> Pagos { get; set; }
 
+        public DbSet<ImagenTercero> ImagenTercero { get; set;   }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Pago>()

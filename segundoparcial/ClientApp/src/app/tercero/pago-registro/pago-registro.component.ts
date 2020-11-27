@@ -3,7 +3,9 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { AlertModalComponent } from 'src/app/@base/alert-modal/alert-modal.component';
 import { PagoService } from 'src/app/services/pago.service';
+import { TerceroService } from 'src/app/services/tercero.service';
 import { Pago } from '../models/pago';
+import { Tercero } from '../models/tercero';
 import { TerceroRegistroComponent } from '../tercero-registro/tercero-registro.component';
 
 @Component({
@@ -14,7 +16,8 @@ import { TerceroRegistroComponent } from '../tercero-registro/tercero-registro.c
 export class PagoRegistroComponent implements OnInit {
 
 
-  constructor(private pagoService : PagoService,private formBuilder :  FormBuilder  ,private modalService: NgbModal) { }
+  constructor(private pagoService : PagoService,private formBuilder :  FormBuilder  ,private modalService: NgbModal,
+    private terceroService : TerceroService) { }
 
   identificacion : string;
   submitted = false;
@@ -41,7 +44,7 @@ export class PagoRegistroComponent implements OnInit {
 
   }
 
-  get f() { return this.registerPagoForm.controls; };
+  get f() { return this.registerPagoForm.controls; }
 
   OnSubmit() {
     this.submitted = true;
@@ -84,7 +87,29 @@ export class PagoRegistroComponent implements OnInit {
 
   Verificar()
   {
-    this.AbrirRegistro();
+      this.BuscarCliente();
+    
   }
+
+  BuscarCliente()
+ {
+    this.terceroService.getId(this.registerPagoForm.value.terceroIdentificacion).subscribe(tercero => 
+      {
+        if(tercero != null)
+        {
+          const messageBox = this.modalService.open(AlertModalComponent)
+          messageBox.componentInstance.title = "Verificacion Terminada";
+          messageBox.componentInstance.message = "Se ha encontrado";
+        }
+        else
+        {
+          this.AbrirRegistro();
+          const messageBox = this.modalService.open(AlertModalComponent)
+          messageBox.componentInstance.title = "Verificacion Terminada";
+          messageBox.componentInstance.message = "No se ha encontrado";
+          
+        }
+      });
+ }
 
 }

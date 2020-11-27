@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Entidad;
 using Logica;
 using Datos;
+using System.Web;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
@@ -38,6 +39,18 @@ namespace segundoparcial.Controllers
             return Ok(terceros);
         }
 
+        [HttpGet("{terceroIdentificacion}")]
+        public ActionResult<IEnumerable<TerceroViewModel>> Gets(string terceroIdentificacion)
+        {
+            var response = _terceroService.ConsultarIdentificacion(terceroIdentificacion); 
+            if(response.Error){
+           
+                return BadRequest(response.Mensaje);
+            }
+            var tercero =  new TerceroViewModel(response.Tercero);
+            return Ok(tercero);
+        }
+
         [HttpPost]
         public ActionResult<TerceroViewModel> Post(TerceroViewModel terceroInput)
         {
@@ -62,10 +75,12 @@ namespace segundoparcial.Controllers
                     Telefono = terceroInput.Telefono,
                     Pais = terceroInput.Pais,
                     Departamento =  terceroInput.Departamento,
-                    Ciudad =  terceroInput.Ciudad
+                    Ciudad =  terceroInput.Ciudad,
+                    NombreFoto =  terceroInput.NombreFoto                   
             };
             return tercero;
         }
 
+       
     }
 }
