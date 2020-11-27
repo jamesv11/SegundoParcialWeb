@@ -6,6 +6,7 @@ import { PagoConsultaComponent } from './tercero/pago-consulta/pago-consulta.com
 import { HomeComponent } from './home/home.component';
 import { TerceroRegistroComponent } from './tercero/tercero-registro/tercero-registro.component';
 import { SubirfotoComponent } from './tercero/subirfoto/subirfoto.component';
+import { VistaFotoComponent } from './tercero/vista-foto/vista-foto.component';
 
 const routes : Routes = [
   {
@@ -32,6 +33,13 @@ const routes : Routes = [
     path:'subirFoto',
     component: SubirfotoComponent
   }
+  ,
+  {
+    path:'vistaFoto',
+    component: VistaFotoComponent
+  }
+
+  
 
 ];
 

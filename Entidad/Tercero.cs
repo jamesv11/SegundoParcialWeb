@@ -6,6 +6,7 @@ namespace Entidad
 {
     public class Tercero
     {
+        
         public int TerceroID { get; set; }
 
         public string TerceroIdentificacion { get; set; }

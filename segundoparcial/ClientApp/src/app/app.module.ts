@@ -22,6 +22,7 @@ import { HeaderComponent } from './header/header.component';
 import { PagoConsultaComponent } from './tercero/pago-consulta/pago-consulta.component';
 import { FiltroIdentificacionPipe } from './pipe/filtro-identificacion.pipe';
 import { SubirfotoComponent } from './tercero/subirfoto/subirfoto.component';
+import { VistaFotoComponent } from './tercero/vista-foto/vista-foto.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { SubirfotoComponent } from './tercero/subirfoto/subirfoto.component';
     HeaderComponent,
     PagoConsultaComponent,
     FiltroIdentificacionPipe,
-    SubirfotoComponent
+    SubirfotoComponent,
+    VistaFotoComponent
   ],
   imports: [
     NgbModule,

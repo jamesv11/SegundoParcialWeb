@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
 import { HandleHttpErrorService } from '../@base/handle-http-error.service';
 import { ImagenTercero } from '../tercero/models/imagenTercero';
+import { VistaImagenTercero } from '../tercero/models/vista-imagen-tercero';
 
 
 @Injectable({
@@ -40,5 +41,13 @@ export class SubirfotoService {
         tap(_ => this.handleErrorService.log('datos enviados')),
         catchError(this.handleErrorService.handleError('Foto registrada',null))
         );
+    }
+
+    get(): Observable<VistaImagenTercero[]>
+    {
+      return this.http.get<VistaImagenTercero[]>(this.baseUrl + 'api/SubirFoto')
+      .pipe(
+        tap(_=> this.handleErrorService.handleError<VistaImagenTercero[]>('Consulta de imagenes',null))  
+      );
     }
 }

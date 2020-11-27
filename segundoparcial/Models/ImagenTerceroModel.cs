@@ -1,18 +1,16 @@
-using System.IO;
-using System.Net.Mime;
+using System.Buffers.Text;
+using System;
 using Entidad;
-using System.Drawing;
-
-
 
 
 namespace segundoparcial.Models
 {
-    
+
     public class ImagenTerceroViewModel
     {
 
         public int ImagenTerceroID {get;set;}
+        public string Imagen {get;set;}
         
         
 
@@ -23,10 +21,12 @@ namespace segundoparcial.Models
         public ImagenTerceroViewModel(ImagenTercero imagenTercero)
         {
             ImagenTerceroID = imagenTercero.ImagenTerceroID;
-
-            
-            
+            Imagen = "data:image/jpeg;base64," + ConvertirByteToImage(imagenTercero.Imagen);      
         }   
+        public string ConvertirByteToImage(byte[] img)
+        { 
+            return Convert.ToBase64String(img);
+        }
 
     }
         

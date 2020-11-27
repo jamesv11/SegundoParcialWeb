@@ -19,6 +19,7 @@ export class TerceroRegistroComponent implements OnInit {
   registrarTerceroForm: FormGroup;
   tercero: Tercero;
 
+
   constructor(private modalService: NgbModal, public activeModal: NgbActiveModal, private terceroService: TerceroService,
     private formBuilder: FormBuilder) { }
 
