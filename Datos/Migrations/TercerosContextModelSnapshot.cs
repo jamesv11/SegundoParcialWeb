@@ -86,6 +86,9 @@ namespace Datos.Migrations
                     b.Property<string>("Pais")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<decimal>("SumaTotalPagos")
+                        .HasColumnType("decimal(18,2)");
+
                     b.Property<string>("Telefono")
                         .HasColumnType("nvarchar(max)");
 

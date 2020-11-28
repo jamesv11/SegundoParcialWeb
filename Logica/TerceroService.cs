@@ -25,6 +25,7 @@ namespace Logica
                 {
                     return new GuardarTerceroResponse("Error la persona se encuentra registrada");
                 }
+                 
                 _context.Terceros.Add(tercero);
                 _context.SaveChanges();
                 return new GuardarTerceroResponse(tercero);
@@ -39,6 +40,7 @@ namespace Logica
         {
             try
             {
+
                 var terceros = _context.Terceros.ToList();
                 return new ConsultarTerceroResponse(terceros);
 
@@ -54,6 +56,7 @@ namespace Logica
         {
             try
             {
+                
                 var tercero = _context.Terceros.Find(TerceroIdentificacion);
                 return new ConsultarTerceroIdentificacionResponse(tercero);
 

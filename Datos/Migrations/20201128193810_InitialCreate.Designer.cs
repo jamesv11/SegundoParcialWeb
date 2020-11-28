@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Datos.Migrations
 {
     [DbContext(typeof(TercerosContext))]
-    [Migration("20201124193821_InitialCreate")]
+    [Migration("20201128193810_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -87,6 +87,9 @@ namespace Datos.Migrations
 
                     b.Property<string>("Pais")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal>("SumaTotalPagos")
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<string>("Telefono")
                         .HasColumnType("nvarchar(max)");

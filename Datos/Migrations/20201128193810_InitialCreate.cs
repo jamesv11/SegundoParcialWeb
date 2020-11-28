@@ -33,7 +33,8 @@ namespace Datos.Migrations
                     Pais = table.Column<string>(nullable: true),
                     Departamento = table.Column<string>(nullable: true),
                     Ciudad = table.Column<string>(nullable: true),
-                    NombreFoto = table.Column<string>(nullable: true)
+                    NombreFoto = table.Column<string>(nullable: true),
+                    SumaTotalPagos = table.Column<decimal>(nullable: false)
                 },
                 constraints: table =>
                 {

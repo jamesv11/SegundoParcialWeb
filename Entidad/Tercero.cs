@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Linq;
+using System.ComponentModel.DataAnnotations;
 using System;
 using System.Collections.Generic;
 
@@ -18,6 +19,20 @@ namespace Entidad
         public string Departamento { get; set; }
         public string Ciudad { get; set; }
         public string NombreFoto { get; set; }
+        public decimal SumaTotalPagos { get; set; }
+
+        //relacion de muchos a uno
         public virtual List<Pago> ListaPagos { get; set; }
+
+
+        public void SumaPagos()
+        { 
+            if(this.ListaPagos != null)
+            { this.SumaTotalPagos = this.ListaPagos.Sum(p => p.ValorPago); }
+            
+            
+        }
+
+        
     }
 }

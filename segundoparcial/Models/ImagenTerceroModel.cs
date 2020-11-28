@@ -11,9 +11,6 @@ namespace segundoparcial.Models
 
         public int ImagenTerceroID {get;set;}
         public string Imagen {get;set;}
-        
-        
-
         public ImagenTerceroViewModel()
         {
         }
